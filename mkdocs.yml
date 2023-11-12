@@ -1,0 +1,98 @@
+site_name: 小杨同学的wiki
+site_url: https://wiki.361way.com/
+nav:
+  - home: index.md
+  - HuaweiCloud:
+    - cloudnative: 
+      - cloudnative/00-contents.md
+      - terraform: cloudnative/01-terraform-createcce.md
+      - container registry: cloudnative/02-Container-Registry.md
+      - CodeArts deploy: cloudnative/03-codearts-deploy.md
+      - cce network: cloudnative/cce-network.md   
+      - k8s network: cloudnative/04-network.md
+      - cce scale: cloudnative/05-scale-cce.md
+      - velero backup: cloudnative/06-velero-backup.md
+      - monitor: cloudnative/07-monitor.md
+      - api gateway: cloudnative/08-apig.md
+      - ucs: cloudnative/09-ucs.md
+      - qingtian: cloudnative/QingTian-Architecture.md
+    - command:
+      - koocli: tools/koocli.md
+  - kubernetes:
+    - base:
+      - kubectl 命令的使用: kubernetes/kubectl.md
+      - labels 标签: kubernetes/labels.md
+      - 使用 configmap: kubernetes/configmap.md
+      - configmap 读取文件: kubernetes/configmap-fromfile.md
+      - 配置 environment: kubernetes/k8s-set-env.md
+      - 镜像仓 registry 认证: kubernetes/registry-secret.md
+      - pod水平扩展 hpa: kubernetes/k8s-hpa.md
+  - 云生态:
+    - 云厂商及周边:
+      - 云厂商cloudflare: ecology/provider/cloudflare.md
+
+theme:
+  nav_style: "horizontal"
+  nav_levels: 2
+  name: material
+  language: zh
+  highlightjs: true
+  title_order: page_title,title,filename
+  palette:
+    scheme: default
+  features:
+  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-expansion-without
+    - navigation.tabs
+    - navigation.path
+    # - navigation.expand 
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.top 
+    - content.code.copy
+    - navigation.footer
+    - toc: true
+    #- toc.integrate #隐藏右边栏
+    - sidebar:
+      hide_on_mobile: true
+
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+markdown_extensions:
+  - abbr #缩写或名词
+  - pymdownx.snippets  #片段，将任意文件或部分内容嵌入到文档中  
+  - admonition  #警告或标注
+  - pymdownx.details  #细节折叠
+  - pymdownx.superfences  #超级围栏
+  - pymdownx.highlight:  #代码高亮，对代码块（SuperFences）和行内代码块（InlineHilite）的语法突出显示
+      linenums: true # 显示行号
+  - pymdownx.inlinehilite  #行内高亮
+  - pymdownx.smartsymbols  #智能符号
+  - pymdownx.tabbed:  #内容选项卡
+      alternate_style: true  #启用内容选项卡替代样式，必须开启
+  - pymdownx.tasklist:  #任务列表
+      custom_checkbox: true   #切换复选框的呈现样式，将原生复选框样式替换为漂亮的图标
+  - attr_list # https://squidfunk.github.io/mkdocs-material/reference/images/
+  - md_in_html
+
+plugins:
+  - search
+  - mkdocs_pymdownx_material_extras
+  - glightbox
+
+extra:
+  social:
+    - icon: fontawesome/solid/paper-plane
+      link: 'mailto: itybku@gmail.com'
